@@ -53,7 +53,7 @@ body {
 .dotted-line-title {
   color: var(--color-main);
   font-weight: normal;
-  font-size: 1.5em;
+  font-size: 1.2em;
   position: relative;
   padding:3px 30px ;
   display: inline-block;
@@ -142,19 +142,17 @@ header nav ul li a:hover{
 
 #hamberger-btn {
   position: fixed;
-  top: 30px;
-  right: 30px;
+  top: 20px;
+  right: 20px;
   z-index: 30;
-  
 }
 #hamberger-btn img{
+  width: 80px;
   vertical-align: bottom;
   border-radius: 50%;
   box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
 }
-#hamberger-btn img{
-  vertical-align: bottom;
-}
+
 header #hamberger-btn-close {
   display: block;
 }
@@ -213,7 +211,7 @@ header.open  #hamberger-btn-open {
   padding: 60px 0;
 }
 #message #message-content{
-  padding: 60px 60px 80px ;
+  padding: 60px 30px 80px ;
   position: relative;
   text-align: center;
   border-radius: 20px;
@@ -233,7 +231,7 @@ header.open  #hamberger-btn-open {
 }
 
 #message #message-content p {
-  font-size: 1.2em;
+  font-size: 1em;
   line-height: 2em;
   display: inline-block;
 }
@@ -316,33 +314,72 @@ header.open  #hamberger-btn-open {
 footer {
   color: white;
   background-image: url(img/footer-bg.jpg) ;
-  padding: 30px;
+  background-size: cover;
+  background-position: left;
+  padding: 30px 8%;
 }
-
 footer h1 {
   text-align: center;
 }
 footer h1 img {
   width: 300px;
 }
-footer p {
-  text-align: center;
-  font-size: 1.2em;
+footer ul {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0  50px;
 }
+footer ul li{
+  font-size: 1.2em;
+  width: 50%;
+  margin-bottom: 30px;
+}
+footer ul li a{
+  padding-left: 10px;
+}
+footer ul li::before{
+  display: inline-block;
+  content: '';
+  height: 12px;
+  width: 12px;
+  border-radius: 3px;
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+  transform: rotate(45deg);
+}
+
+footer p {
+  line-height: 1.6em;
+  text-align: center;
+  font-size: 1.4em;
+  padding-bottom: 20px;
+}
+footer .store-info p {
+  line-height: 1em;
+}
+
 footer p small{
   font-size: 0.7em;
 }
-
+@media (min-width:800px) {
+  /* ---------- footer -------- */
+  footer ul{
+    justify-content: center;
+  }
+  footer ul li{
+    width: 30%;
+  }
+  
+}
 
 /* -----------------------
         works-single
 ------------------------ */
 
 
-@media (max-width:600px) {
-  /* ---------- footer -------- */
-  
-}
+
 
 
 /* -----------------------

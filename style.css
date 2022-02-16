@@ -215,7 +215,7 @@ header.open  #hamberger-btn-open {
   position: relative;
   text-align: center;
   border-radius: 20px;
-  outline: 2px solid var(--color-main);
+  border: 2px solid var(--color-main);
 }
 #message #message-content::after{
   position: absolute;
@@ -226,7 +226,7 @@ header.open  #hamberger-btn-open {
   bottom: -6px;
   display: block;
   border-radius: 20px;
-  outline: 2px solid var(--color-sab);
+  border: 2px solid var(--color-sab);
   z-index: -5;
 }
 

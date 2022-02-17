@@ -45,7 +45,7 @@ body {
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 8%;
+  padding: 0 6%;
 }
 
 /* ------ 両サイド飾りtitle ----- */
@@ -53,11 +53,11 @@ body {
 .dotted-line-title {
   color: var(--color-main);
   font-weight: normal;
-  font-size: 1.2em;
+  font-size: 1em;
   position: relative;
-  padding:3px 30px ;
+  padding:3px 20px ;
   display: inline-block;
-  margin-bottom: 30px;
+  margin: 15px 0 30px;
 }
 .dotted-line-title span {
   display: inline-block;
@@ -126,11 +126,11 @@ header nav ul{
   text-align: center;
 }
 header nav ul li{
-  font-size: 1.3em;
+  font-size: 1.2em;
   width: 50%;
   margin: 0 auto;
   color: white;
-  padding: 25px 0;
+  padding: 15px 0;
   border-top: 1px solid #ccc;
 }
 header nav ul li:last-of-type{
@@ -192,7 +192,7 @@ header.open  #hamberger-btn-open {
   right: 0;
   bottom: 0;
   margin: 0 auto;
-  width: 40%;
+  width: 50%;
   max-width: 360px;
   z-index: 20;
   transform: translateY(-50%);
@@ -222,8 +222,8 @@ header.open  #hamberger-btn-open {
   content: '';
   top: 6px;
   left: 6px;
-  right: -6px;
-  bottom: -6px;
+  right: -10px;
+  bottom: -10px;
   display: block;
   border-radius: 20px;
   border: 2px solid var(--color-sab);
@@ -231,7 +231,7 @@ header.open  #hamberger-btn-open {
 }
 
 #message #message-content p {
-  font-size: 1em;
+  font-size: 0.8em;
   line-height: 2em;
   display: inline-block;
 }
@@ -266,19 +266,19 @@ header.open  #hamberger-btn-open {
   position: absolute;
   left: -5px;
   bottom: -5px;
-  width: 100px;
+  width: 80px;
 }
 .message-illust2 {
   position: absolute;
   right: -10px;
   bottom: -5px;
-  width: 100px;
+  width: 80px;
 }
 .message-illust3 {
   position: absolute;
-  top:30px;
+  top:20px;
   left: 20px;
-  width: 60px;
+  width: 50px;
 }
  
 
@@ -322,7 +322,7 @@ footer h1 {
   text-align: center;
 }
 footer h1 img {
-  width: 300px;
+  width: 200px;
 }
 footer ul {
   max-width: 800px;
@@ -332,7 +332,7 @@ footer ul {
   padding: 20px 0  50px;
 }
 footer ul li{
-  font-size: 1.2em;
+  font-size: 1em;
   width: 50%;
   margin-bottom: 30px;
 }
@@ -342,26 +342,26 @@ footer ul li a{
 footer ul li::before{
   display: inline-block;
   content: '';
-  height: 12px;
-  width: 12px;
-  border-radius: 3px;
+  height: 10px;
+  width: 10px;
   border-top: 2px solid white;
   border-right: 2px solid white;
   transform: rotate(45deg);
 }
 
 footer p {
-  line-height: 1.6em;
+  line-height: 1.8em;
   text-align: center;
-  font-size: 1.4em;
+  font-size: 1em;
   padding-bottom: 20px;
 }
 footer .store-info p {
+  font-size: 1em;
   line-height: 1em;
 }
 
 footer p small{
-  font-size: 0.7em;
+  font-size: 0.5em;
 }
 @media (min-width:800px) {
   /* ---------- footer -------- */

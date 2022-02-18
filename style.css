@@ -20,6 +20,10 @@ a {
   text-decoration: none;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* -------- font設定 --------- */
 @font-face {
 	font-family: 'GenJyuuGothicL-P';
@@ -36,6 +40,7 @@ body {
   --color-title:#0050C4;
   --color-main:#6491D7;
   --color-sab:#B0D8FF;
+  --color-btn:linear-gradient(#6491D7,#3C80E3,#9264E3);
 }
 
 /* -----------------------
@@ -48,10 +53,96 @@ body {
   padding: 0 6%;
 }
 
-/* ------ 両サイド飾りtitle ----- */
+
+/* ---------- illustの配置 -------- */
+
+.message-illust-topleft {
+  position: absolute;
+  top:20px;
+  left: 20px;
+  width: 50px;
+}
+.message-illust-topright {
+  position: absolute;
+  top:20px;
+  right: 20px;
+  width: 50px;
+}
+.message-illust-bottomleft {
+  position: absolute;
+  left: -5px;
+  bottom: -5px;
+  width: 80px;
+}
+.message-illust-bottomright {
+  
+  position: absolute;
+  right: -10px;
+  bottom: -5px;
+  width: 80px;
+}
+
+
+
+
+/* テキストの囲い込み青の２重線 */
+#message-content{
+  padding: 60px 30px 80px ;
+  position: relative;
+  text-align: center;
+  border-radius: 20px;
+  border: 2px solid var(--color-main);
+}
+#message-content::after{
+  position: absolute;
+  content: '';
+  top: 6px;
+  left: 6px;
+  right: -10px;
+  bottom: -10px;
+  display: block;
+  border-radius: 20px;
+  border: 2px solid var(--color-sab);
+  z-index: -5;
+}
+
+/* インスタグラム */
+
+.instagram-logo {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--color-main);
+}
+
+@media (max-width:800px) {
+  /* ---------- 改行のため -------- */
+  .on {
+    display: none;
+  }
+}
+@media (min-width:800px) {
+  /* ---------- 改行のため -------- */
+ .off {
+   display: none;
+ }
+ .on {
+   display: block;
+ }
+}
+
+
+
+/* -----------------------
+          title
+------------------------ */
+
+
+/* ------ dotted-line-title(両サイド点線) ----- */
 
 .dotted-line-title {
-  color: var(--color-main);
   font-weight: normal;
   font-size: 1em;
   position: relative;
@@ -60,6 +151,7 @@ body {
   margin: 15px 0 30px;
 }
 .dotted-line-title span {
+  color: var(--color-main);
   display: inline-block;
   padding: 0 1px;
 }
@@ -84,13 +176,70 @@ body {
 }
 
 
-@media (max-width:600px) {
-  /* ---------- common -------- */
+/* ------ bgblue-title(小_背景に青の背景) ----- */
+.bgblue-title {
+  color: white;
+  background-color: var(--color-main);
+  line-height: 1.8em;
+  width: 220px;
+  margin: 0 auto;
+  border-radius: 30px;
+  margin-bottom:20px ;
 }
 
-/* -----------------------
-          title
------------------------- */
+
+/* ------ bgbigblue-title(大_背景に青の背景) ----- */
+.bgbigblue-title {
+  color: white;
+  background-color: var(--color-main);
+  line-height: 2.8em;
+  width: 260px;
+  margin: 0 auto;
+  border-radius: 30px;
+}
+/* ------ underline-title(下線に青のライン)----- */
+
+.underline-title {
+  color: var(--color-title);
+  font-weight: normal;
+  font-size: 1.2em;
+  display: inline-block;
+  margin: 0 auto;
+}
+.underline-title::after {
+  position: relative;
+  content: '';
+  display: block;
+  width: 240px;
+  height: 20px;
+  background-color: var(--color-sab);
+  border-radius: 30px;
+  transform: translateY(-15px);
+  z-index: -1;
+}
+
+/* ------ btn-title(大_背景に青の背景) ----- */
+.btn-title {
+  color: white;
+  background-image: var(--color-btn);
+  line-height: 2.8em;
+  width: 260px;
+  margin: 0 auto;
+  border-radius: 30px;
+  box-shadow:0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-title a {
+  display: block;
+}
+.btn-title:hover {
+  opacity: 0.9;
+}
+.btn-title:active {
+  box-shadow:none;
+  transform: translateY(2px);
+}
+
 /* -----------------------
            header
 ------------------------ */
@@ -147,7 +296,7 @@ header nav ul li a:hover{
   z-index: 30;
 }
 #hamberger-btn img{
-  width: 80px;
+  width: 60px;
   vertical-align: bottom;
   border-radius: 50%;
   box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
@@ -210,29 +359,11 @@ header.open  #hamberger-btn-open {
 #message {
   padding: 60px 0;
 }
-#message #message-content{
-  padding: 60px 30px 80px ;
-  position: relative;
-  text-align: center;
-  border-radius: 20px;
-  border: 2px solid var(--color-main);
-}
-#message #message-content::after{
-  position: absolute;
-  content: '';
-  top: 6px;
-  left: 6px;
-  right: -10px;
-  bottom: -10px;
-  display: block;
-  border-radius: 20px;
-  border: 2px solid var(--color-sab);
-  z-index: -5;
-}
+
 
 #message #message-content p {
   font-size: 0.8em;
-  line-height: 2em;
+  line-height: 2.5em;
   display: inline-block;
 }
 
@@ -260,53 +391,115 @@ header.open  #hamberger-btn-open {
 
 
 
-/* ---------- illust -------- */
-
-.message-illust1 {
-  position: absolute;
-  left: -5px;
-  bottom: -5px;
-  width: 80px;
-}
-.message-illust2 {
-  position: absolute;
-  right: -10px;
-  bottom: -5px;
-  width: 80px;
-}
-.message-illust3 {
-  position: absolute;
-  top:20px;
-  left: 20px;
-  width: 50px;
-}
- 
-
-
-@media (max-width:800px) {
-  /* ---------- 改行のため -------- */
-  .on {
-    display: none;
-  }
-}
-@media (min-width:800px) {
-  /* ---------- 改行のため -------- */
- .off {
-   display: none;
- }
- .on {
-   display: block;
- }
-}
 /* -----------------------
-           news
+         aquarium
 ------------------------ */
+
+#aquarium {
+  padding-bottom: 60px;
+}
+
+#aquarium #message-content p {
+  font-size: 0.9em;
+  line-height: 2.5em;
+  display: inline-block;
+  padding-bottom: 60px;
+}
+
+#aquarium .dotted-line-title span:first-of-type {
+  transform: rotate(-15deg);
+}
+#aquarium .dotted-line-title span:nth-of-type(2) {
+  transform: translateY(-3px) rotate(-10deg);
+}
+#aquarium .dotted-line-title span:nth-of-type(3) {
+  transform: translateY(-5px) rotate(-4deg);
+}
+#aquarium .dotted-line-title span:nth-of-type(4) {
+  transform: translateY(-6px) rotate(0deg);
+}
+#aquarium .dotted-line-title span:nth-of-type(5) {
+  transform: translateY(-6px) rotate(0deg);
+}
+#aquarium .dotted-line-title span:nth-of-type(6) {
+  transform: translateY(-5px) rotate(4deg);
+}
+#aquarium .dotted-line-title span:nth-of-type(7) {
+  transform: translateY(-4px) rotate(10deg);
+}
+#aquarium .dotted-line-title span:last-of-type {
+  transform: rotate(15deg);
+}
+
+#aquarium .charm-image {
+  padding: 10px 0;
+}
+#aquarium #message-content .charm-text {
+  font-size: 0.9em;
+  line-height: 1.8em;
+}
+#aquarium #message-content .charm-text:last-of-type {
+  line-height: 1.8em;
+  padding-bottom: 0;
+}
+
+
+/* -----------------------
+         home-rental
+------------------------ */
+
+#home-rental {
+  text-align: center;
+  padding-bottom: 60px;
+}
+#home-rental p{
+  line-height: 1.8em;
+
+}
+#home-rental img{
+  width: 80%;
+  max-width: 400px;
+  padding: 40px 0 0 ; 
+}
+
+#home-rental .dotted-line-title {
+  color: black;
+  font-size: 1.2em;
+}
 
 
 @media (max-width:600px) {
   /* ---------- news -------- */
   
 }
+/* -----------------------
+      home-instagram
+------------------------ */
+
+#home-instagram {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.instagram-acsess {
+  display: inline-block;
+  padding: 10px 0 20px ;
+}
+
+#home-instagram .instagram-acsess img{
+  width: 100px;
+  margin-bottom: 10px;
+}
+#home-instagram .instagram-acsess p{
+  font-size: 1.2em;
+  color: var(--color-main);
+}
+
+#home-instagram p:last-of-type {
+  line-height: 1.8em;
+}
+
+
 /* -----------------------
            footer
 ------------------------ */
@@ -316,7 +509,7 @@ footer {
   background-image: url(img/footer-bg.jpg) ;
   background-size: cover;
   background-position: left;
-  padding: 30px 8%;
+  padding: 30px 8% 0px ;
 }
 footer h1 {
   text-align: center;
@@ -361,6 +554,8 @@ footer .store-info p {
 }
 
 footer p small{
+  display: inline-block;
+  padding-top:20px ;
   font-size: 0.5em;
 }
 @media (min-width:800px) {

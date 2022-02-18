@@ -54,6 +54,8 @@ body {
 }
 
 
+
+
 /* ---------- illustの配置 -------- */
 
 .message-illust-topleft {
@@ -82,18 +84,53 @@ body {
   width: 80px;
 }
 
+/* トップ以外のコンテンツのタイトル部分 */
 
+.content-eng-title{
+  font-weight: normal;
+  font-size: 2em;
+  font-family: 'Mrs Saint Delafield', "cursive";
+  text-align: center;
+  color: var(--color-sab);
+  letter-spacing: 0.2em;
+  margin-bottom: 40px;
+}
+
+#content-title h1 {
+  font-size: 1.2em;
+  color: white;
+  line-height: 100px;
+  font-weight: normal;
+  text-align: center;
+  height: 130px;
+  letter-spacing: 0.2em;
+  background-image: linear-gradient(to right, #6400c3,#0000c0,#000064) ;
+}
+
+#white-box {
+  display: flex;
+}
+.white-box-item {
+  width: 50%;
+  height: 40px;
+  background-color: white;
+  transform: translateY(-30px);
+  border-radius: 0px 30px 0px 0px;
+}
+.white-box-item:last-of-type {
+  border-radius: 30px 0 0 0;
+}
 
 
 /* テキストの囲い込み青の２重線 */
-#message-content{
+.message-content{
   padding: 60px 30px 80px ;
   position: relative;
   text-align: center;
   border-radius: 20px;
   border: 2px solid var(--color-main);
 }
-#message-content::after{
+.message-content::after{
   position: absolute;
   content: '';
   top: 6px;
@@ -142,6 +179,8 @@ body {
 
 /* ------ dotted-line-title(両サイド点線) ----- */
 
+
+
 .dotted-line-title {
   font-weight: normal;
   font-size: 1em;
@@ -183,19 +222,23 @@ body {
   line-height: 1.8em;
   width: 220px;
   margin: 0 auto;
+  text-align: center;
   border-radius: 30px;
   margin-bottom:20px ;
+  letter-spacing: 1px;
 }
 
 
 /* ------ bgbigblue-title(大_背景に青の背景) ----- */
 .bgbigblue-title {
+  font-weight: normal;
   color: white;
   background-color: var(--color-main);
   line-height: 2.8em;
   width: 260px;
   margin: 0 auto;
-  border-radius: 30px;
+  text-align: center;
+  border-radius: 40px;
 }
 /* ------ underline-title(下線に青のライン)----- */
 
@@ -240,6 +283,26 @@ body {
   transform: translateY(2px);
 }
 
+
+/* ------ left-border-title(下線に青のライン)----- */
+
+.left-border-title{
+  text-align-last: left;
+  padding-left:10px ;
+  position: relative;
+  line-height: 1.6em;
+}
+.left-border-title::before {
+  position: absolute;
+  left: 0;
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 4px;
+  border-radius: 4px;
+  background-color: var(--color-sab);
+}
+
 /* -----------------------
            header
 ------------------------ */
@@ -268,9 +331,12 @@ header.open nav {
   opacity: 1;
 }
 
-
-header nav ul{
-  padding: 20vh 0;
+#hamberger-nav-logo {
+  width: 60px;
+  margin-bottom: 10px;
+}
+header nav {
+  padding: 10vh 0;
   height: 100%;
   text-align: center;
 }
@@ -279,8 +345,9 @@ header nav ul li{
   width: 50%;
   margin: 0 auto;
   color: white;
-  padding: 15px 0;
+  padding: 12px 0;
   border-top: 1px solid #ccc;
+  letter-spacing: 0.1em;
 }
 header nav ul li:last-of-type{
   border-bottom: 1px solid #ccc;
@@ -288,6 +355,16 @@ header nav ul li:last-of-type{
 header nav ul li a:hover{
   opacity: 0.7;
 }
+#header-icon-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+#header-icon-box img{
+  width: 90px;
+  padding:20px 20px 0;
+}
+
 
 #hamberger-btn {
   position: fixed;
@@ -299,7 +376,7 @@ header nav ul li a:hover{
   width: 60px;
   vertical-align: bottom;
   border-radius: 50%;
-  box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow:0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 header #hamberger-btn-close {
@@ -361,7 +438,7 @@ header.open  #hamberger-btn-open {
 }
 
 
-#message #message-content p {
+#message .message-content p {
   font-size: 0.8em;
   line-height: 2.5em;
   display: inline-block;
@@ -399,7 +476,7 @@ header.open  #hamberger-btn-open {
   padding-bottom: 60px;
 }
 
-#aquarium #message-content p {
+#aquarium .message-content p {
   font-size: 0.9em;
   line-height: 2.5em;
   display: inline-block;
@@ -434,11 +511,11 @@ header.open  #hamberger-btn-open {
 #aquarium .charm-image {
   padding: 10px 0;
 }
-#aquarium #message-content .charm-text {
+#aquarium .message-content .charm-text {
   font-size: 0.9em;
   line-height: 1.8em;
 }
-#aquarium #message-content .charm-text:last-of-type {
+#aquarium .message-content .charm-text:last-of-type {
   line-height: 1.8em;
   padding-bottom: 0;
 }
@@ -522,7 +599,7 @@ footer ul {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  padding: 20px 0  50px;
+  padding: 20px 0  20px;
 }
 footer ul li{
   font-size: 1em;
@@ -542,12 +619,41 @@ footer ul li::before{
   transform: rotate(45deg);
 }
 
+
 footer p {
   line-height: 1.8em;
   text-align: center;
   font-size: 1em;
   padding-bottom: 20px;
 }
+
+#footer-icon-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+#footer-icon-box img{
+  width: 100px;
+  padding:0 20px ;
+}
+
+#footer-phone-contact {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding: 40px 0;
+  margin-bottom: 40px;
+}
+
+#footer-phone-contact .bgbigblue-title{
+  background-color: white;
+  color: var(--color-title);
+  font-size: 1.4em;
+  padding: 0;
+  font-weight: bold;
+  letter-spacing:1px;
+}
+
 footer .store-info p {
   font-size: 1em;
   line-height: 1em;
@@ -570,10 +676,174 @@ footer p small{
 }
 
 /* -----------------------
-        works-single
+        取り扱い商品
+------------------------ */
+#product section {
+  margin-bottom: 60px;
+}
+
+#beginner-set {
+  text-align: center;
+}
+#beginner-set h2{
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+#beginner-set h3{
+  color: var(--color-main);
+  font-size: 1.4em;
+}
+#beginner-set h4{
+  color: black;
+  line-height: 1.2em;
+  padding: 10px 0;
+}
+#beginner-set h4 .money{
+  color: var(--color-title);
+  font-size: 1.8em;
+}
+
+.product-box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.product-box-item {
+  width: 48%;
+}
+.product-box-item img{
+  margin-bottom: 10px;
+}
+
+#product ul li {
+  margin-bottom: 5px;
+}
+#product ul li span {
+  color: var(--color-main);
+  padding-right: 5px;
+}
+
+#last-comment {
+  margin-top: 40px;
+  line-height: 1.5em;
+  text-align: center;
+}
+#last-comment p{
+  padding: 0 25px;
+}
+
+
+/* -----------------------
+        レンタル水槽
 ------------------------ */
 
+#rental section {
+  margin-bottom: 60px;
+}
+#rental-orderflow h3 {
+  margin-bottom: 60px;
+}
+#rental-orderflow ul h4 {
+  font-size: 1.6em;
+  padding-top: 20px;
+}
 
+#rental-orderflow .message-content {
+  position: relative;
+  padding: 20px 0 ;
+  margin-bottom: 100px;
+}
+
+#rental-orderflow h5 {
+  position: absolute;
+  color: var(--color-main);
+  top: -35px;
+  left: 0;
+  right: 0;
+  width: 150px;
+  margin: 0 auto;
+  font-size: 3em;
+  background-color: white;
+}
+#rental-orderflow .message-content p{
+  line-height: 2em;
+}
+
+.underarrow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+  border-width:3px ;
+  border-style: solid;
+  border-color: transparent var(--color-sab) var(--color-sab) transparent;
+  border-radius: 10px;
+  transform: translateY(35px) rotate(45deg);
+}
+.underarrow::after {
+  position: absolute;
+  display: block;
+  top:-5px;
+  left: -20px;
+  content: '';
+  width: 80px;
+  height: 10px;
+  background-color: white;
+  transform: translateY(15px) rotate(-45deg);
+}
+
+#sab-visual {
+  height: 200px;
+  background-image: url(img/image-rental-bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+#question-box {
+  padding-top: 40px;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+#question-box dt,
+#question-box dd{
+  width: 88%;
+}
+#question-box dt {
+  position: relative;
+  color: var(--color-title);
+  border-bottom: 2px dotted #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+#question-box dt::before {
+  color: white;
+  position: absolute;
+  left: -35px;
+  content: 'Q';
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background-color: var(--color-main);
+}
+#question-box dd{
+  margin-bottom: 30px;
+}
+
+/* -----------------------
+        水槽設置事例
+------------------------ */
+/* -----------------------
+        店舗アクセス
+------------------------ */
+/* -----------------------
+        お問い合わせ
+------------------------ */
 
 
 
